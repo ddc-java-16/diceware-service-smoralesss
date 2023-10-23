@@ -16,7 +16,7 @@ public class WordListProvider implements WordProvider {
 
   private final List<String> words;
 
-  public WordListProvider(@Value("${word-list-name}") String wordListFile) {
+  public WordListProvider(@Value("${diceware.word-list-name}") String wordListFile) {
     Resource resource = new ClassPathResource(wordListFile);
     try (Stream<String> stream = Files.lines(Paths.get(resource.getURI()))) {
       words = stream
